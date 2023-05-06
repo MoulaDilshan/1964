@@ -1,0 +1,31 @@
+<h2>Write a JavaScript program to find the Armstrong numbers of 3 digits. Go to the editor
+Note : An Armstrong number of three digits is an integer such that the sum of the cubes of its digits is equal to the number itself. For example, 371 is an Armstrong number since 3**3 + 7**3 + 1**3 = 27 + 147 + 3   371.</h2>
+
+
+<script>
+
+// program to check an Armstrong number of three digits
+
+let sum = 0;
+const number = prompt('Enter a three-digit positive integer: ');
+
+// create a temporary variable
+let temp = number;
+while (temp > 0) {
+    // finding the one's digit
+    let remainder = temp % 10;
+
+    sum += remainder * remainder * remainder;
+
+    // removing last digit from the number
+    temp = parseInt(temp / 10); // convert float into integer
+}
+// check the condition
+if (sum == number) {
+    document.write(`${number} is an Armstrong number`);
+}
+else {
+    document.write(`${number} is not an Armstrong number.`);
+}
+
+</script>
